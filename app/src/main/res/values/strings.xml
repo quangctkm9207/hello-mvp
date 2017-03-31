@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Hello MVP</string>
+    <string name="show">Show message</string>
+    <string name="update">Update</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+</resources>
