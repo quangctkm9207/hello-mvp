@@ -1,35 +1,34 @@
 package com.quangnguyen.hellomvp;
 
+import javax.inject.Inject;
+
 /**
- * Created by Quang Nguyen on 3/26/17.
- *
+ * @author Quang Nguyen.
  * An implementation of the Presenter
  */
 
-public class SayHelloPresenter implements SayHelloContract.Presenter{
+public class SayHelloPresenter implements SayHelloContract.Presenter {
 
-    private Person mPerson;
-    private SayHelloContract.View mView;
+  private Person mPerson;
+  private SayHelloContract.View mView;
 
-    public SayHelloPresenter( SayHelloContract.View view) {
-        mPerson = new Person();
-        mView = view;
+  @Inject public SayHelloPresenter(Person person, SayHelloContract.View view) {
+    mPerson = person;
+    mView = view;
+  }
+
+  @Override public void loadMessage() {
+    if (mPerson.getFirstName() == null && mPerson.getLastName() == null) {
+      mView.showError("No person name found.");
+      return;
     }
 
-    @Override
-    public void loadMessage() {
-        if (mPerson.getFirstName() == null && mPerson.getLastName() == null){
-            mView.showError("No person name found.");
-            return;
-        }
+    String message = "Hi " + mPerson.getName() + "!";
+    mView.showMessage(message);
+  }
 
-        String message = "Hi " + mPerson.getName() + "!";
-        mView.showMessage(message);
-    }
-
-    @Override
-    public void saveName(String firstName, String lastName) {
-        mPerson.setFirstName(firstName);
-        mPerson.setLastName(lastName);
-    }
+  @Override public void saveName(String firstName, String lastName) {
+    mPerson.setFirstName(firstName);
+    mPerson.setLastName(lastName);
+  }
 }
