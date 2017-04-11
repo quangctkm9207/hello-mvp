@@ -19,12 +19,12 @@ import javax.inject.Inject;
 public class SayHelloActivity extends AppCompatActivity
     implements SayHelloContract.View, View.OnClickListener {
 
-  @Inject SayHelloPresenter mPresenter;
+  @Inject SayHelloPresenter presenter;
 
-  //UI properties
-  private TextView mMessageView;
-  private EditText mFirstNameView;
-  private EditText mLastNameView;
+  // UI properties
+  private TextView messageView;
+  private EditText firstNameView;
+  private EditText lastNameView;
 
   @Override protected void onCreate(@Nullable Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
@@ -39,16 +39,16 @@ public class SayHelloActivity extends AppCompatActivity
   }
 
   private void initViews() {
-    mMessageView = (TextView) findViewById(R.id.message);
-    mFirstNameView = (EditText) findViewById(R.id.firstName);
-    mLastNameView = (EditText) findViewById(R.id.lastName);
+    messageView = (TextView) findViewById(R.id.message);
+    firstNameView = (EditText) findViewById(R.id.firstName);
+    lastNameView = (EditText) findViewById(R.id.lastName);
 
     findViewById(R.id.update).setOnClickListener(this);
     findViewById(R.id.showMessage).setOnClickListener(this);
   }
 
   @Override public void showMessage(String message) {
-    mMessageView.setText(message);
+    messageView.setText(message);
   }
 
   @Override public void showError(String error) {
@@ -61,11 +61,11 @@ public class SayHelloActivity extends AppCompatActivity
   @Override public void onClick(View view) {
     switch (view.getId()) {
       case R.id.update:
-        mPresenter.saveName(mFirstNameView.getText().toString(),
-            mLastNameView.getText().toString());
+        presenter.saveName(firstNameView.getText().toString(),
+            lastNameView.getText().toString());
         break;
       case R.id.showMessage:
-        mPresenter.loadMessage();
+        presenter.loadMessage();
         break;
     }
   }

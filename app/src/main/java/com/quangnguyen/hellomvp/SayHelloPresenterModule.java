@@ -8,20 +8,20 @@ import dagger.Provides;
  */
 @Module public class SayHelloPresenterModule {
 
-  private final SayHelloContract.View mView;
+  private final SayHelloContract.View view;
 
-  private final Person mPerson;
+  private final Person person;
 
   public SayHelloPresenterModule(SayHelloContract.View view, Person person) {
-    mView = view;
-    mPerson = person;
+    this.view = view;
+    this.person = person;
   }
 
   @Provides SayHelloContract.View provideTaskDetailContractView() {
-    return mView;
+    return view;
   }
 
   @Provides Person providePerson() {
-    return mPerson;
+    return person;
   }
 }

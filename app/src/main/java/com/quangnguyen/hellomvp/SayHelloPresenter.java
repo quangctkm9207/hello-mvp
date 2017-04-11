@@ -9,26 +9,26 @@ import javax.inject.Inject;
 
 public class SayHelloPresenter implements SayHelloContract.Presenter {
 
-  private Person mPerson;
-  private SayHelloContract.View mView;
+  private Person person;
+  private SayHelloContract.View view;
 
   @Inject public SayHelloPresenter(Person person, SayHelloContract.View view) {
-    mPerson = person;
-    mView = view;
+    this.person = person;
+    this.view = view;
   }
 
   @Override public void loadMessage() {
-    if (mPerson.getFirstName() == null && mPerson.getLastName() == null) {
-      mView.showError("No person name found.");
+    if (person.getFirstName() == null && person.getLastName() == null) {
+      view.showError("No person name found.");
       return;
     }
 
-    String message = "Hi " + mPerson.getName() + "!";
-    mView.showMessage(message);
+    String message = "Hi " + person.getName() + "!";
+    view.showMessage(message);
   }
 
   @Override public void saveName(String firstName, String lastName) {
-    mPerson.setFirstName(firstName);
-    mPerson.setLastName(lastName);
+    person.setFirstName(firstName);
+    person.setLastName(lastName);
   }
 }
