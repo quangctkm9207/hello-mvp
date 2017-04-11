@@ -6,30 +6,28 @@ package com.quangnguyen.hellomvp;
  * An implementation of the Presenter
  */
 
-public class SayHelloPresenter implements SayHelloContract.Presenter{
+public class SayHelloPresenter implements SayHelloContract.Presenter {
 
-    private Person mPerson;
-    private SayHelloContract.View mView;
+  private Person person;
+  private SayHelloContract.View view;
 
-    public SayHelloPresenter( SayHelloContract.View view) {
-        mPerson = new Person();
-        mView = view;
+  public SayHelloPresenter(SayHelloContract.View view) {
+    this.person = new Person();
+    this.view = view;
+  }
+
+  @Override public void loadMessage() {
+    if (person.getFirstName() == null && person.getLastName() == null) {
+      view.showError("No person name found.");
+      return;
     }
 
-    @Override
-    public void loadMessage() {
-        if (mPerson.getFirstName() == null && mPerson.getLastName() == null){
-            mView.showError("No person name found.");
-            return;
-        }
+    String message = "Hi " + person.getName() + "!";
+    view.showMessage(message);
+  }
 
-        String message = "Hi " + mPerson.getName() + "!";
-        mView.showMessage(message);
-    }
-
-    @Override
-    public void saveName(String firstName, String lastName) {
-        mPerson.setFirstName(firstName);
-        mPerson.setLastName(lastName);
-    }
+  @Override public void saveName(String firstName, String lastName) {
+    person.setFirstName(firstName);
+    person.setLastName(lastName);
+  }
 }

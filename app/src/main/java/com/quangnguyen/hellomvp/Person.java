@@ -7,34 +7,34 @@ package com.quangnguyen.hellomvp;
  */
 
 public class Person {
-    private String mFirstName;
-    private String mLastName;
+  private String firstName;
+  private String lastName;
 
-    public Person() {
-    }
+  public Person() {
+  }
 
-    public Person(String firstName, String lastName) {
-        mFirstName = firstName;
-        mLastName = lastName;
-    }
+  public Person(String firstName, String lastName) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
 
-    public String getFirstName() {
-        return mFirstName;
-    }
+  public String getFirstName() {
+    return firstName;
+  }
 
-    public String getLastName() {
-        return mLastName;
-    }
+  public String getLastName() {
+    return lastName;
+  }
 
-    public void setFirstName(String firstName) {
-        this.mFirstName = firstName;
-    }
+  public void setFirstName(String firstName) {
+    this.firstName = firstName;
+  }
 
-    public void setLastName(String lastName) {
-        this.mLastName = lastName;
-    }
+  public void setLastName(String lastName) {
+    this.lastName = lastName;
+  }
 
-    public String getName() {
-        return mFirstName + " " + mLastName;
-    }
+  public String getName() {
+    return firstName + " " + lastName;
+  }
 }
