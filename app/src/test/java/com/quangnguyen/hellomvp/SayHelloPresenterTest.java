@@ -1,3 +1,5 @@
+package com.quangnguyen.hellomvp;
+
 import com.quangnguyen.hellomvp.Person;
 import com.quangnguyen.hellomvp.SayHelloContract;
 import com.quangnguyen.hellomvp.SayHelloPresenter;
