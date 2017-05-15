@@ -27,4 +27,11 @@ dependencies {
   apt 'com.google.dagger:dagger-compiler:2.10'
   provided 'org.glassfish:javax.annotation:10.0-b28'
   compile 'com.google.dagger:dagger:2.10'
+
+  // Local Unit Tests
+  testCompile 'junit:junit:4.12'
+  testCompile 'org.mockito:mockito-core:2.7.22'
+
+  // Android Unit Tests
+  androidTestCompile 'org.mockito:mockito-android:2.7.22'
 }
