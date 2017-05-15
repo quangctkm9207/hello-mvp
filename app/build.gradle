@@ -1,24 +1,31 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 25
-    buildToolsVersion "25.0.2"
-    defaultConfig {
-        applicationId "com.quangnguyen.hellomvp"
-        minSdkVersion 16
-        targetSdkVersion 25
-        versionCode 1
-        versionName "1.0"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+  compileSdkVersion 25
+  buildToolsVersion "25.0.2"
+  defaultConfig {
+    applicationId "com.quangnguyen.hellomvp"
+    minSdkVersion 16
+    targetSdkVersion 25
+    versionCode 1
+    versionName "1.0"
+    testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+  }
+  buildTypes {
+    release {
+      minifyEnabled false
+      proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
     }
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-        }
-    }
+  }
 }
 
 dependencies {
-    compile 'com.android.support:appcompat-v7:25.1.0'
+  compile 'com.android.support:appcompat-v7:25.1.0'
+
+  // Local Unit Tests
+  testCompile 'junit:junit:4.12'
+  testCompile 'org.mockito:mockito-core:2.7.22'
+
+  // Android Unit Tests
+  androidTestCompile 'org.mockito:mockito-android:2.7.22'
 }
