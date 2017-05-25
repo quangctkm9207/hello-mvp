@@ -39,6 +39,7 @@ ext {
 dependencies {
   compile "com.android.support:appcompat-v7:$supportLibraryVersion"
   compile "com.android.support:support-annotations:$supportLibraryVersion"
+  compile "com.android.support:design:$supportLibraryVersion"
 
   // Local Unit Tests
   testCompile 'junit:junit:4.12'
@@ -59,5 +60,6 @@ dependencies {
   // Resolve conflicts between main and test APK:
   androidTestCompile "com.android.support:appcompat-v7:$supportLibraryVersion"
   androidTestCompile "com.android.support:support-annotations:$supportLibraryVersion"
+  androidTestCompile "com.android.support:design:$supportLibraryVersion"
 }
 
