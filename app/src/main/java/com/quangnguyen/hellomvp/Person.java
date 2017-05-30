@@ -1,9 +1,9 @@
 package com.quangnguyen.hellomvp;
 
 /**
- * @author Quang Nguyen
- *
  * Represents the Model in MVP architecture
+ *
+ * @author Quang Nguyen
  */
 
 public class Person {

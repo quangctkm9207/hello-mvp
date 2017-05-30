@@ -17,11 +17,13 @@ import dagger.Provides;
     this.person = person;
   }
 
-  @Provides SayHelloContract.View provideTaskDetailContractView() {
+  @Provides
+  SayHelloContract.View provideSayHelloContractView() {
     return view;
   }
 
-  @Provides Person providePerson() {
+  @Provides
+  Person providePerson() {
     return person;
   }
 }

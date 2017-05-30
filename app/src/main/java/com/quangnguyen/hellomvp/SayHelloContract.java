@@ -1,8 +1,9 @@
 package com.quangnguyen.hellomvp;
 
 /**
- * @author Quang Nguyen.
  * Helps us track the relationship between the View and the Presenter in a central place.
+ *
+ * @author Quang Nguyen.
  */
 
 public interface SayHelloContract {
