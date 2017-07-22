@@ -1,9 +1,9 @@
 package com.quangnguyen.hellomvp;
 
 /**
- * Created by Quang Nguyen on 3/26/17.
+ * An implementation of the Presenter.
  *
- * An implementation of the Presenter
+ * @author Quang Nguyen.
  */
 
 public class SayHelloPresenter implements SayHelloContract.Presenter {
@@ -16,7 +16,8 @@ public class SayHelloPresenter implements SayHelloContract.Presenter {
     this.view = view;
   }
 
-  @Override public void loadMessage() {
+  @Override
+  public void loadMessage() {
     if (person.getFirstName() == null && person.getLastName() == null) {
       view.showError("No person name found.");
       return;
@@ -26,7 +27,8 @@ public class SayHelloPresenter implements SayHelloContract.Presenter {
     view.showMessage(message);
   }
 
-  @Override public void saveName(String firstName, String lastName) {
+  @Override
+  public void saveName(String firstName, String lastName) {
     person.setFirstName(firstName);
     person.setLastName(lastName);
   }

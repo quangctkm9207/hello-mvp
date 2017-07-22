@@ -4,16 +4,15 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
 /**
- * Created by Quang Nguyen on 3/26/17.
+ * An implementation of the View.
  *
- * An implementation of the View
- */
+ * @author Quang Nguyen.
+ **/
 
 public class SayHelloActivity extends AppCompatActivity
     implements SayHelloContract.View, View.OnClickListener {
@@ -25,7 +24,8 @@ public class SayHelloActivity extends AppCompatActivity
   private EditText firstNameView;
   private EditText lastNameView;
 
-  @Override protected void onCreate(@Nullable Bundle savedInstanceState) {
+  @Override
+  protected void onCreate(@Nullable Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_hello_screen);
     initViews();
@@ -43,18 +43,21 @@ public class SayHelloActivity extends AppCompatActivity
     findViewById(R.id.showMessage).setOnClickListener(this);
   }
 
-  @Override public void showMessage(String message) {
+  @Override
+  public void showMessage(String message) {
     messageView.setText(message);
   }
 
-  @Override public void showError(String error) {
+  @Override
+  public void showError(String error) {
     Toast.makeText(getApplicationContext(), error, Toast.LENGTH_SHORT).show();
   }
 
   /**
    * The View only receives user's action and leaves all remaining tasks for the Presenter
    */
-  @Override public void onClick(View view) {
+  @Override
+  public void onClick(View view) {
     switch (view.getId()) {
       case R.id.update:
         presenter.saveName(firstNameView.getText().toString(), lastNameView.getText().toString());

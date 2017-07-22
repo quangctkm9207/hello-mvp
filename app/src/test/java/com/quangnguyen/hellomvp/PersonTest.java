@@ -1,6 +1,5 @@
 package com.quangnguyen.hellomvp;
 
-import com.quangnguyen.hellomvp.Person;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -28,5 +27,4 @@ public class PersonTest {
     person.setFirstName("FIRST");
     person.setLastName("LAST");
   }
-
 }

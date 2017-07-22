@@ -17,23 +17,24 @@ import static android.support.test.espresso.matcher.ViewMatchers.withText;
 
 /**
  * Integration UI tests in main screen
+ *
  * @author Quang Nguyen.
  */
-@RunWith(AndroidJUnit4.class)
-public class SayHelloActivityTest {
+@RunWith(AndroidJUnit4.class) public class SayHelloActivityTest {
   private final String FIRST = "Quang";
   private final String LAST = "Nguyen";
 
   private String message = "Hi " + FIRST + " " + LAST + "!";
 
   @Rule
-  public ActivityTestRule<SayHelloActivity> testRule = new ActivityTestRule<>(SayHelloActivity.class);
+  public ActivityTestRule<SayHelloActivity> testRule =
+      new ActivityTestRule<>(SayHelloActivity.class);
 
   @Test
   public void showMessage() {
     // Enter name to name edit texts
     onView(withId(R.id.firstName)).perform(replaceText(FIRST), closeSoftKeyboard());
-    onView(withId(R.id.lastName)).perform(replaceText(LAST),  closeSoftKeyboard());
+    onView(withId(R.id.lastName)).perform(replaceText(LAST), closeSoftKeyboard());
     // Click update button
     onView(withId(R.id.update)).perform(click());
     // Click show button
