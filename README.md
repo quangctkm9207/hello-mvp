@@ -7,5 +7,5 @@ Full details are explained in the following Medium posts:
 3. [Falling in love with Android Testing](https://blog.mindorks.com/falling-in-love-with-android-testing-dd11ffa6ac3e)
 
 ----
-If you are interested in my useful blog posts and cool projects, you can subscribe to my newsletter by clicking the below link. Thanks.  
+If you are interested in my useful blog posts and cool projects, you can subscribe to my newsletter by clicking the below link.  
 [SUBSCRIBE TO USEFUL BLOG POSTS AND COOL PROJECTS.](http://eepurl.com/g1nqlf)
